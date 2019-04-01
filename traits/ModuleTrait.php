@@ -25,6 +25,9 @@ trait ModuleTrait
      */
     public static function getDb()
     {
-        return \Yii::$app->getModule('user')->getDb();
+        //return \Yii::$app->getModule('user')->getDb();
+        return \Yii::$app->getModule('user') ? \Yii::$app->getModule('user')->getDb() : \Yii::$app->db;
+        //info: https://github.com/dektrium/yii2-user/commit/4b06f2b057b488091ae91f77e749890e189c7376
+    }
     }
 }
